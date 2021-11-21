@@ -88,3 +88,5 @@ COPY taxi_trips(
         dropoff_location)
     FROM PROGRAM 'awk FNR-1 /tmp/data/taxi*.csv | cat' DELIMITER ',' CSV HEADER;
 ```
+
+**Общий комментарий**: БД, по которой описано всё выше вессит около 72 ГБ. До этого тестировал так же и на другой БД весом 18 Гб (new_york_taxi_trips.tlc_yellow_trips_2017). В ней первый запрос в PostgreSQL выполнялся чуть больше 3-х минут, в BigQuery все так же менее секунды.
